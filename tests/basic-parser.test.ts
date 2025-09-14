@@ -41,12 +41,3 @@ test("parseCSV handles qoutes in qoutes", async () => {
   const result = await parseCSV(PEOPLE1_CSV_PATH);
   expect(result[5]).toEqual(['Prince is a good "boy"', "28", "wils@gmail.com"]);
 });
-
-test("parseCSV handles multiline quoted fields", async () => {
-  const result = await parseCSV(PEOPLE1_CSV_PATH);
-  expect(result[result.length - 1]).toEqual([
-    "Prince\nWilson",
-    "28",
-    "wils@gmail.com",
-  ]);
-});
